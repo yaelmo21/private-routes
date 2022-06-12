@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useHttp } from '../hooks/useHttp';
+import { RedireccionPage } from '../pages/Redireccion/RedireccionPage';
+import { SeachPage } from '../pages/search/SeachPage';
 import { validToken } from '../services/AuthService';
 import { AuthRoutes } from './AuthRoutes';
 import { DashboardRoutes } from './DashboardRoutes';
@@ -29,6 +31,8 @@ export const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='redireccion' element={<RedireccionPage />} />
+        <Route path='search' element={<SeachPage />} />
         <Route
           path='/auth/*'
           element={
